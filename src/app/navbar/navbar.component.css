@@ -1,0 +1,167 @@
+/* Basic Navbar Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fa4242;; /* white navbar */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+.logo a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* 👈 thoda gehra aur clear shadow */
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+/* Buttons inside nav */
+.nav-links button {
+  color: #333;
+  background: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover on button only */
+.nav-links button:hover {
+  background-color: #2874f0;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(40, 116, 240, 0.4);
+}
+
+/* Hover on parent li keeps tab blue while hovering dropdown */
+.nav-links li:hover > button {
+  background-color: #2874f0;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(40, 116, 240, 0.4);
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 4px 0; /* ⬅️ vertical padding kam kiya */
+  min-width: 140px; /* ⬅️ width choti ki */
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  perspective: 500px;
+
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Item */
+.dropdown-menu li {
+  padding: 6px 12px; /*inner item ka height bhi kam kiya */
+  font-size: 0.9rem;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.dropdown-menu li:hover a {
+  color: brown;
+  transform: translateZ(10px); /* Real 3D effect aage ki taraf */
+}
+
+
+/* Hover on dropdown item */
+.dropdown-menu li:hover {
+  background-color: white; /* light blue bg */
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover a {
+  color: brown;
+  transform: scale(1.08);
+}
+
+
+
+/* Icon style (optional) */
+.dropdown-menu li i {
+  font-size: 1rem;
+  color: #2874f0;
+  margin-right: 10px;
+}
+
+/* Hamburger Menu Styling */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
