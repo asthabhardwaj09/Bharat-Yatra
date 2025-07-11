@@ -1,131 +1,119 @@
-/* Basic Navbar Styling */
-nav {
+nav.custom-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fa4242;; /* white navbar */
+  background-color: skyblue; /* 💠 Elegant Teal Blue */
   padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  height: 65px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10); /* 🔽 Reduced shadow */
+  position: sticky;
+  top: 0;
   z-index: 1000;
-}
-
-.logo a {
-  color: black;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* 👈 thoda gehra aur clear shadow */
+  border-radius: 12px; /* ⤵️ Fully rounded corners (top and bottom) */
 }
 
 
 
-.nav-links {
-  list-style: none;
+/* Logo Section */
+.logo {
   display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 64px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .nav-links li {
-  margin-left: 1.5rem;
   position: relative;
 }
 
-/* Buttons inside nav */
+/* Nav Buttons */
 .nav-links button {
-  color: #333;
   background: none;
-  font-weight: 500;
-  font-size: 1rem;
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  padding: 8px 14px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Hover on button only */
 .nav-links button:hover {
-  background-color: #2874f0;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(40, 116, 240, 0.4);
+  transform: scale(1.08);
+  color: #333;
 }
 
-/* Hover on parent li keeps tab blue while hovering dropdown */
-.nav-links li:hover > button {
-  background-color: #2874f0;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(40, 116, 240, 0.4);
-}
-
-/* Dropdown Styles */
-.dropdown {
-  position: relative;
-}
-
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  list-style: none;
-  padding: 4px 0; /* ⬅️ vertical padding kam kiya */
-  min-width: 140px; /* ⬅️ width choti ki */
-  border-radius: 4px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  min-width: 150px;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  animation: dropdownFade 0.3s ease forwards;
   z-index: 999;
-  perspective: 500px;
-
+  list-style: none;
+  margin: 0;
 }
 
-/* Show Dropdown on Hover */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Dropdown Item */
 .dropdown-menu li {
-  padding: 6px 12px; /*inner item ka height bhi kam kiya */
-  font-size: 0.9rem;
+  padding: 8px 16px;
 }
 
 .dropdown-menu li a {
+  color: #1976d2;
   text-decoration: none;
-  color: #333;
-  display: block;
-  transition: color 0.3s ease, transform 0.3s ease;
-  transform-style: preserve-3d;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-.dropdown-menu li:hover a {
-  color: brown;
-  transform: translateZ(10px); /* Real 3D effect aage ki taraf */
+.dropdown-menu li a:hover {
+  color: red;
 }
 
-
-/* Hover on dropdown item */
-.dropdown-menu li:hover {
-  background-color: white; /* light blue bg */
-  cursor: pointer;
-}
-
-.dropdown-menu li:hover a {
-  color: brown;
-  transform: scale(1.08);
-}
-
-
-
-/* Icon style (optional) */
-.dropdown-menu li i {
-  font-size: 1rem;
-  color: #2874f0;
-  margin-right: 10px;
-}
-
-/* Hamburger Menu Styling */
+/* Hamburger Menu for Mobile */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -135,21 +123,21 @@ nav {
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: black;
   margin: 4px 0;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
+    background-color: #00ACC1;
     width: 100%;
-    background-color: #fff;
     position: absolute;
-    top: 60px;
+    top: 65px;
     left: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
   }
 
   .nav-links.active {
@@ -157,11 +145,74 @@ nav {
   }
 
   .nav-links li {
-    margin: 1rem 0;
     text-align: center;
   }
 
   .menu-toggle {
     display: flex;
   }
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+  padding: 10px 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  color: #007BFF; /* Soft blue */
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5faff;
+  transform: translateX(5px);
+  border-radius: 4px;
+}
+
+.dropdown-menu li:hover a {
+  color: #d32f2f; /* Red on hover */
+  font-weight: 600;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px; /* spacing before nav-links */
+}
+
+.logo-wrapper img {
+  height: 55px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-wrapper img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.logo-text {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }

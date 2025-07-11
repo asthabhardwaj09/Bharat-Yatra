@@ -1,0 +1,160 @@
+/* Main Layout Container */
+.main-auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card with GIF and Form Side by Side */
+.auth-card-with-gif {
+  display: flex;
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* GIF Section with Shadow */
+.gif-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15); /* Shadow only on left side */
+  background-color: #fff;
+}
+
+.gif-section img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 0 14px 14px 0;
+  z-index: 2;
+}
+
+/* Hello Text Centered */
+.hello-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hello-text h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hello-text .sub-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Inputs with Hover/Focus Effects */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input:hover,
+input:focus {
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+  border-color: #0d6efd;
+  outline: none;
+}
+
+/* Button Style */
+button {
+  padding: 12px;
+  margin-top: 16px;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #084298;
+}
+
+/* Headings */
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Toggle Links */
+.toggle-link {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.toggle-link a.no-underline {
+  text-decoration: none;
+  color: #0d6efd;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toggle-link a.no-underline:hover {
+  text-decoration: underline;
+}
+
+/* Footer Text */
+.brand-footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  .auth-card-with-gif {
+    flex-direction: column;
+  }
+
+  .gif-section,
+  .form-section {
+    border-radius: 14px;
+  }
+
+  .gif-section {
+    box-shadow: none;
+  }
+}
+
+/* Hello text inside form */
+.text-inside-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Centers children horizontally */
+}

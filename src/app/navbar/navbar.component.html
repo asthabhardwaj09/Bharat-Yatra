@@ -1,9 +1,13 @@
-<nav>
+<nav class="custom-navbar">
+  <!-- Logo Section -->
   <div class="logo">
-    <a (click)="navigateTo('/Home')">GanakGyan</a>
+    <div class="logo-wrapper">
+      <img src="assets/logo.jpg" alt="Logo" />
+      <span class="logo-text">Rath Yatra</span>
+    </div>
   </div>
 
-  <!-- Responsive Toggle Button (linked to CSS) -->
+  <!-- Hamburger Menu for Mobile -->
   <div class="menu-toggle" (click)="toggleNavbar()">
     <div class="bar"></div>
     <div class="bar"></div>
@@ -12,19 +16,18 @@
 
   <!-- Navigation Links -->
   <ul class="nav-links" [ngClass]="{ 'active': isMenuOpen }">
-
     <!-- Home -->
     <li class="dropdown" (mouseenter)="toggleDropdown('home')" (mouseleave)="toggleDropdown(null)">
-      <button (click)="navigateTo('/Home')">Home</button>
+      <button (click)="navigateTo('/home')">Home 🏠</button>
       <ul *ngIf="activeDropdown === 'home'" class="dropdown-menu">
         <li><a (click)="navigateTo('/dashboard')">Dashboard</a></li>
-        <li><a (click)="navigateTo('/NewUser')">New User</a></li>
+        <li><a (click)="navigateTo('/new-user')">New User</a></li>
       </ul>
     </li>
 
     <!-- About -->
     <li class="dropdown" (mouseenter)="toggleDropdown('about')" (mouseleave)="toggleDropdown(null)">
-      <button (click)="navigateTo('/About')">About</button>
+      <button (click)="navigateTo('/about')">About ℹ️</button>
       <ul *ngIf="activeDropdown === 'about'" class="dropdown-menu">
         <li><a (click)="navigateTo('/team')">Team</a></li>
         <li><a (click)="navigateTo('/mission')">Mission</a></li>
@@ -33,7 +36,7 @@
 
     <!-- Service -->
     <li class="dropdown" (mouseenter)="toggleDropdown('service')" (mouseleave)="toggleDropdown(null)">
-      <button (click)="navigateTo('/Service')">Service</button>
+      <button (click)="navigateTo('/service')">Service 🛠️</button>
       <ul *ngIf="activeDropdown === 'service'" class="dropdown-menu">
         <li><a (click)="navigateTo('/plan')">Plan</a></li>
         <li><a (click)="navigateTo('/support')">Support</a></li>
@@ -42,7 +45,7 @@
 
     <!-- Contact -->
     <li class="dropdown" (mouseenter)="toggleDropdown('contact')" (mouseleave)="toggleDropdown(null)">
-      <button (click)="navigateTo('/Contact')">Contact</button>
+      <button (click)="navigateTo('/contact')">Contact 📞</button>
       <ul *ngIf="activeDropdown === 'contact'" class="dropdown-menu">
         <li><a (click)="navigateTo('/email')">Email</a></li>
         <li><a (click)="navigateTo('/call')">Call</a></li>

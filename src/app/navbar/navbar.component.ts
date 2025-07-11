@@ -16,15 +16,25 @@ export class NavbarComponent {
   constructor(private router: Router) {}
 
   toggleDropdown(menu: string | null) {
-    this.activeDropdown = menu;
+    this.activeDropdown = this.activeDropdown === menu ? null : menu;
   }
 
   navigateTo(path: string) {
     this.router.navigate([path]);
-    this.activeDropdown = null; // dropdown close after navigation
+    this.activeDropdown = null;
+    this.isMenuOpen = false;
   }
 
   toggleNavbar() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logout() {
+    localStorage.removeItem('loggedInUser');
+    this.router.navigate(['/login']);
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('loggedInUser');
   }
 }
