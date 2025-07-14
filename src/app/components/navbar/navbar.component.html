@@ -1,0 +1,35 @@
+<nav class="clean-navbar">
+  <div class="brand">Bharat Yatra</div>
+
+  <ul class="nav-menu">
+    <li><a routerLink="/home">🏠 Home</a></li>
+    <li><a routerLink="/contact">📞 Contact</a></li>
+
+    <!-- 📍 Places Dropdown (on hover) -->
+    <li
+      class="dropdown"
+      (mouseenter)="showDropdown = true"
+      (mouseleave)="showDropdown = false"
+    >
+      <a href="javascript:void(0)" class="dropdown-toggle">📍 Places</a>
+      <div class="dropdown-cards" *ngIf="showDropdown">
+        <div class="dropdown-card"><a routerLink="/place/add">➕ Add Place</a></div>
+        <div class="dropdown-card"><a routerLink="/place/update">✏️ Update Place</a></div>
+        <div class="dropdown-card"><a routerLink="/place/description">📄 Description</a></div>
+      </div>
+    </li>
+
+    <!-- 👤 Signup Dropdown (on click only) -->
+    <li class="dropdown">
+      <button class="dropdown-toggle" (click)="toggleAuthDropdown()">
+        👤 Signup
+      </button>
+      <div class="dropdown-cards" *ngIf="showAuthDropdown">
+        <div class="dropdown-card"><a routerLink="/login">🔓 Login</a></div>
+        <div class="dropdown-card"><a routerLink="/register">📝 Register</a></div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

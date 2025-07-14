@@ -1,0 +1,16 @@
+<h2>Add New Place</h2>
+<form (ngSubmit)="submitForm()">
+  <input type="text" [(ngModel)]="place.name" name="name" placeholder="Name" required /><br />
+  <input type="text" [(ngModel)]="place.location" name="location" placeholder="Location" required /><br />
+  <input type="text" [(ngModel)]="place.category" name="category" placeholder="Category" required /><br />
+  <textarea [(ngModel)]="place.description" name="description" placeholder="Description" required></textarea><br />
+
+  <input type="text" [(ngModel)]="blockText" name="blockText" placeholder="Add Description Block" />
+  <button type="button" (click)="addBlock()">Add Block</button>
+
+  <ul>
+    <li *ngFor="let block of place.descriptionBlocks">{{ block }}</li>
+  </ul>
+
+  <button type="submit">Submit</button>
+</form>

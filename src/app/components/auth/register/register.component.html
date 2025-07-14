@@ -1,0 +1,23 @@
+<div class="auth-card">
+  <h2>Register</h2>
+
+  <input type="text" placeholder="Full Name" [(ngModel)]="fullName" />
+  <input type="email" placeholder="Email" [(ngModel)]="email" />
+  <input type="text" placeholder="Phone Number" [(ngModel)]="phoneNumber" />
+
+  <input type="text" placeholder="Street" [(ngModel)]="street" />
+  <input type="text" placeholder="City" [(ngModel)]="city" />
+  <input type="text" placeholder="State" [(ngModel)]="state" />
+  <input type="text" placeholder="Zip Code" [(ngModel)]="zipCode" />
+  <input type="text" placeholder="Country" [(ngModel)]="country" />
+
+  <input type="password" placeholder="Password" [(ngModel)]="password" />
+
+  <button (click)="register()">Register</button>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <p>Already have an account? <a routerLink="/login">Login</a></p>
+</div>

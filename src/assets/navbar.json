@@ -1,0 +1,5 @@
+[
+  { "label": "🏠 Home", "path": "/home" },
+  { "label": "📍 Place", "path": "/place" },
+  { "label": "📞 Contact Us", "path": "/contact" }
+]

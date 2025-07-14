@@ -1,0 +1,41 @@
+.component-wrapper {
+  padding: 2rem;
+}
+
+.component-wrapper h1 {
+  margin-bottom: 1rem;
+}
+
+.component-wrapper p,
+.component-wrapper form {
+  margin-top: 1rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212 !important;
+  color: #e0e0e0;
+  height: 100%;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.component-wrapper, .hero-section {
+  background-color: #121212;
+}
+
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+

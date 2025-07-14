@@ -1,0 +1,38 @@
+.hero-section {
+  background: radial-gradient(circle at top left, #1d1f20, #121212);
+  color: #e0e0e0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.text-content {
+  max-width: 700px;
+}
+
+.brand-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00d9ff;
+  margin: 0.8rem 0;
+}
+
+.explore-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #00d9ff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #0bbde0;
+}

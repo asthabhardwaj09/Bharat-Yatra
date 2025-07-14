@@ -1,0 +1,82 @@
+body {
+  background-color: #111; /* Matches navbar background */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 28px 26px;
+  background: #fff;
+  border-radius: 10px;
+
+  /* ✨ Light & soft card lift */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05), 
+              0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  border-color: #04aa6d;
+  outline: none;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #04aa6d;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-card button:hover {
+  background-color: #03995c;
+}
+
+.auth-card .error {
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-card p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 28px 26px;
+  background: #fff;
+  border-radius: 10px;
+
+  /* 🟢 Very subtle shadow (almost flat) */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
